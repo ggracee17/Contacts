@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Contact from "./Contact";
+import Card from "./Card";
 import contacts from "../contacts";
 
 function createCard(contact) {
-  return (<Contact
+  return (<Card 
     key={contact.id} 
     name={contact.name} 
     username={contact.username}
