@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer>
-        <p>&copy; Contact App {currentYear}</p>
+        <div><p>&copy; Contact App {currentYear}</p></div>
     </footer>
     
   );

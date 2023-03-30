@@ -1,22 +1,70 @@
-import React from "react";
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import React, { useState } from "react";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PhoneIphoneOutlinedIcon from '@mui/icons-material/PhoneIphoneOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
 function Card(contact) {
+  const [isMousedOver, setMouseOver] = useState(false);
+  const [isExpanded, setExpanded] = useState(false);
+  const LightTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: '#31363869',
+      color: '#f4f5f7',
+      boxShadow: theme.shadows[1],
+      fontSize: 11,
+    },
+  }));
+  
+  function handleMouseOver() {
+    setMouseOver(true);
+  }
+
+  function handleMouseOut() {
+    setMouseOver(false);
+  }
+
+  function expand() {
+    setExpanded(true);
+  }
+
+  function collapse() {
+    setExpanded(false);
+    setMouseOver(false);
+  }
+
   return (
-    <dl className="card">
-      <h1>{contact.name}</h1>
-      <p><PersonOutlineOutlinedIcon sx={{ fontSize: 16 }}/> {contact.username}</p>
-      <p><EmailOutlinedIcon sx={{ fontSize: 16 }}/> {contact.email}</p>
-      <p><HomeOutlinedIcon sx={{ fontSize: 16 }}/> {contact.address}</p>
-      <p><PhoneIphoneOutlinedIcon sx={{ fontSize: 16 }}/> {contact.phone}</p>
-      <p><LanguageOutlinedIcon sx={{ fontSize: 16 }}/> {contact.website}</p>
-      <p><ApartmentOutlinedIcon sx={{ fontSize: 16 }}/> {contact.company}</p>
-    </dl>
+    <div className="card" 
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      style={{backgroundColor: isMousedOver ? "white":"#E8E9EB"}}
+      onClick={isExpanded ? collapse: expand}
+    >
+      {isExpanded ? <LightTooltip title="Click to close">
+        <div>
+          <h1>{contact.name}</h1>
+          <h2>{contact.username}</h2>
+          <p><PhoneIphoneOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.phone}</p>
+          <p><EmailOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.email}</p>
+          <p><HomeOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.address}</p>
+          <p><LanguageOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.website}</p>
+          <p><ApartmentOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.company}</p>
+        </div>
+      </LightTooltip> : <LightTooltip title="Click to expand">
+        <div>
+          <h1>{contact.name}</h1>
+          <h2>{contact.username}</h2>
+          <p><PhoneIphoneOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.phone}</p>
+          <p><EmailOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.email}</p>
+        </div></LightTooltip>
+        
+      }
+    </div>
   );
 }
 
