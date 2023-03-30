@@ -1,3 +1,7 @@
+// fetch('https://jsonplaceholder.typicode.com/users')
+//       .then(response => response.json())
+//       .then(json => console.log(json))
+
 const contacts = [
     {
       "id": 1,
@@ -231,4 +235,5 @@ const contacts = [
     }
   ]
 
-  export default contacts;
+export default contacts;
+  

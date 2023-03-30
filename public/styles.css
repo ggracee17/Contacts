@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-family: "Raleway", sans-serif;
 }
+
 body {
     background: #dadbdd;
     padding: 0 16px;
@@ -14,14 +16,18 @@ body {
 
 header {
     background-color: #A09CB0;
-    margin: auto -16px;
-    padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    padding: 10px 32px;
+    color: #f1f1f1;
+    margin-left: -16px;
+    margin-right: -16px;
 }
 
 header h1 {
     color: #f1f1f1;
     font-weight: 200;
+    margin: 20px;
+    margin-left: -5px;
+    display: flex;
 }
 
 footer {
@@ -43,16 +49,17 @@ footer p {
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     padding: 10px;
-    width: 250px;
-    margin: 8px;
+    width: 200px;
+    margin: 10px;
     float: left;
     color: #8d7473;
     transition: all 150ms ease-in-out;
+    z-index: -1;
 }
 
 .card h1 {
     color: #8d7473;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 5px 6px 0 6px;
     padding: 2px 2px 0 2px;
 }
@@ -76,4 +83,59 @@ footer p {
 
 .card a {
     color: #8d7473;
+}
+
+.sidebar {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    height: 100%;
+    width: 6.5rem;
+    background-color: #A09CB0;
+    color: #e6e6e6;
+    padding: 16px 32px;
+}
+
+.sidebar h1 {
+    font-weight: 200;
+    margin: 5px;
+}
+
+.searchbar {
+    right: 0;
+    display: flex;
+}
+
+.content {
+    margin: 20px;
+}
+
+@media (min-width: 1400px) {
+    .card {
+        width: 330px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .card {
+        width: 250px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        width: 285px;
+    }
+}
+
+@media (max-width: 540px) {
+    .card {
+        width: 400px;
+    }
 }
