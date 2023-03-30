@@ -1,11 +1,12 @@
 body {
-    background: #E8E9EB;
+    background: #dadbdd;
     padding: 0 16px;
     font-family: 'Raleway', sans-serif;
+    padding-bottom: 2rem;
 }
 
 header {
-    background-color: #313638;
+    background-color: #A09CB0;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
@@ -16,8 +17,12 @@ header h1 {
     font-weight: 200;
 }
 
+html {
+    padding-bottom: 2rem;
+}
+
 footer {
-    position: absolute;
+    position: fixed;
     text-align: center;
     bottom: 0;
     width: 100%;
@@ -26,26 +31,41 @@ footer {
 
 footer p {
     color: #31363869;
+    font-size: 0.8em;
 }
 
-.contact {
-    background: #e0dfd5;
+.sidebar {
+    background-color: #313638;
+    margin: auto;
+    padding: 10px;
+}
+
+.card {
+    background: #E8E9EB;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     padding: 10px;
-    width: 240px;
-    margin: 16px;
+    width: auto;
+    margin: 8px;
     float: left;
+    color: #987D7C;
 }
 
-.contact h1 {
-    font-size: 1.1em;
-    margin-bottom: 6px;
+.card h1 {
+    color: #987D7C;
+    font-size: 1.2em;
+    display: flex;
+    flex: 1;
+    margin: 5px 5px 12px 6px;
+    padding: 3px;
 }
 
-.contact p {
-    font-size: 0.7em;
-    margin-bottom: 10px;
+.card p {
+    font-size: 0.9em;
+    margin: 5px;
+    padding: 2px;
     white-space: pre-wrap;
     word-wrap:break-word;
+    display: flex;
+    text-align: center;
 }

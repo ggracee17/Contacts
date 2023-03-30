@@ -1,15 +1,27 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Contact from "./Contact";
+import Card from "./Card";
+import contacts from "../contacts";
+
+function createCard(contact) {
+  return (<Card 
+    key={contact.id} 
+    name={contact.name} 
+    username={contact.username}
+    email={contact.email}
+    address={contact.address.city}
+    phone={contact.phone}
+    website={contact.website}
+    company={contact.company.name}
+  />);
+}
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Contact name="name 1" username="username 1"></Contact>
-      <Contact name="name 2" username="username 2"></Contact>
-      <Contact name="name 3" username="username 2"></Contact>
+      {contacts.map(createCard)}
       <Footer></Footer>
     </div>
     
