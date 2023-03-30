@@ -52,7 +52,7 @@ function Card(contact) {
           <p><PhoneIphoneOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.phone}</p>
           <p><EmailOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.email}</p>
           <p><HomeOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.address}</p>
-          <p><LanguageOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.website}</p>
+          <p><LanguageOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;<a href={contact.website}>{contact.website}</a></p>
           <p><ApartmentOutlinedIcon sx={{ fontSize: 16 }}/>&nbsp;{contact.company}</p>
         </div>
       </LightTooltip> : <LightTooltip title="Click to expand">
