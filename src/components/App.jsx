@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      {contacts.map(createCard)}
+      <div className='content'>{contacts.map(createCard)}</div>
       <Footer></Footer>
     </div>
     
