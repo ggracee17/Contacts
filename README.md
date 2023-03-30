@@ -2,7 +2,7 @@
 A responsive application that allows the user to browse their contacts.
 
 ## Setup
-This project is created with `Create React App`.
+This project is created with `Create React App` and the Material-UI library.
 
 In the project directory, you can run:
 
